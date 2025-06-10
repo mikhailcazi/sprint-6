@@ -1,0 +1,26 @@
+.profile-tile {
+  height: 150px;
+  width: 150px;
+  background-color: #d8e6e6;
+  border-radius: 10px;
+  color: black;
+  border: 5px solid white;
+  display: grid;
+}
+
+.profile-name {
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.profile-clicked {
+  background-color: #c1ddbb !important;
+}
+
+.class-wall {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 20px;
+  grid-template-columns: auto auto auto;
+  position: absolute;
+}
