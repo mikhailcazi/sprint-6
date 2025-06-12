@@ -13,7 +13,7 @@ function DadJokes() {
       <div id="nav-bar">
         <NavBar onSearch={onSearch} />
       </div>
-      <div style={{ height: "100%" }}>
+      <div style={{ height: "calc(100% - 20px)" }}>
         <JokeList term={term} />
       </div>
     </>
