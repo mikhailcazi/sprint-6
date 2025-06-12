@@ -1,13 +1,10 @@
 import "./App.css";
-import ClassWall from "./components/ClassWall";
-import Counter from "./components/Counter";
-import SolarSystem from "./components/SolarSystem";
-import SanFran from "./components/SanFran";
+import DadJokes from "./pages/DadJokes";
 
 function App() {
   return (
     <>
-      <SolarSystem />
+      <DadJokes />
     </>
   );
 }
