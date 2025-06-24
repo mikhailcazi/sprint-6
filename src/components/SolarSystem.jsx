@@ -1,17 +1,18 @@
 import axios from "axios";
 import Planet from "./Planet";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function SolarSystem() {
   const URL = "https://webapis.bloomtechdev.com/planets";
 
   const [planetData, setPlanetData] = useState([]);
 
-  if (planetData.length == 0)
+  useEffect(() => {
     axios.get(URL).then((res) => {
       setPlanetData(res.data);
       console.log(planetData);
     });
+  });
 
   return (
     <>

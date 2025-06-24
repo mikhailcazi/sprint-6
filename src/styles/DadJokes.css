@@ -12,14 +12,14 @@
 }
 
 #joke-list {
-  background-color: white;
+  /* background-color: white; */
   margin: 20px;
   height: calc(100% - 40px);
   border-radius: 10px;
   color: black;
   font-size: small;
   overflow: auto;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 #search-bar-div {
@@ -32,4 +32,40 @@
   border-radius: 5px;
   padding: 5px;
   color: black;
+  width: 200px;
+  transition: width 1s;
+}
+
+#search-bar:hover {
+  width: 400px;
+}
+
+.joke {
+  background-color: papayawhip;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  color: black;
+  transition: background-color 0.5s;
+}
+
+.comment:hover {
+  background-color: gray;
+}
+
+button:hover {
+  background-color: gray;
+}
+
+@media (width < 1000px) {
+  #search-bar {
+    background-color: gray !important;
+  }
 }

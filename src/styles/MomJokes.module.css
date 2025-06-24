@@ -1,0 +1,5 @@
+#nav-bar {
+  background-color: blue;
+  height: 75px;
+  display: flex;
+}

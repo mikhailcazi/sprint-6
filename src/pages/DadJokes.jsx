@@ -2,20 +2,27 @@ import { useState } from "react";
 import JokeList from "../components/JokeList";
 import NavBar from "../components/NavBar";
 import "../styles/DadJokes.css";
+import { Outlet, Route, Routes } from "react-router";
+import ClassWall from "../components/ClassWall";
 
 function DadJokes() {
   const [term, setTerm] = useState("");
-  const onSearch = (value) => {
+  const searchFunction = (value) => {
     setTerm(value);
   };
+
   return (
     <>
-      <div id="nav-bar">
-        <NavBar onSearch={onSearch} />
+      <div id={"nav-bar"}>
+        <NavBar onSearch={searchFunction} />
       </div>
-      <div style={{ height: "calc(100% - 20px)" }}>
-        <JokeList term={term} />
-      </div>
+
+      <Outlet />
+
+      <Routes>
+        <Route path="/jokes" element={<JokeList term={term} />} />
+        <Route path="/class-wall" element={<ClassWall />} />
+      </Routes>
     </>
   );
 }

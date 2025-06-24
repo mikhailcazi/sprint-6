@@ -1,11 +1,16 @@
 import { useState } from "react";
 
-function Profile({ name, hobby, favouriteWord }) {
+function Profile({ name, hobby, favouriteWord, chosen }) {
   const [clicked, setClicked] = useState(false);
 
   return (
     <div
-      className={"profile-tile" + (clicked ? " profile-clicked" : "")}
+      className={
+        "profile-tile" +
+        (name.toLowerCase().includes(chosen) || clicked
+          ? " profile-clicked"
+          : "")
+      }
       onClick={() => setClicked(true)}
     >
       <span className={"profile-name"}>{name}</span>

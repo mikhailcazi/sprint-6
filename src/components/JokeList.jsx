@@ -1,20 +1,23 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Joke from "./Joke";
 
 function JokeList(props) {
   const URL = "https://icanhazdadjoke.com/search";
 
   const [jokeList, setJokes] = useState([]);
-  console.log(jokeList);
-  if (jokeList.length == 0) {
-    const headers = {
-      Accept: "application/json",
-    };
+
+  const headers = {
+    Accept: "application/json",
+  };
+
+  const axiosFunction = () => {
     axios.get(URL, { headers }).then((res) => {
       setJokes(res?.data?.results);
     });
-  }
+  };
+
+  useEffect(axiosFunction, []);
 
   return (
     <div id="joke-list">
